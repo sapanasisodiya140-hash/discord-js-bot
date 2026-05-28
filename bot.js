@@ -45,3 +45,9 @@ process.on("unhandledRejection", (err) => client.logger.error(`Unhandled excepti
   // start the client
   await client.login(process.env.BOT_TOKEN);
 })();
+const http = require('http');
+http.createServer((req, res) => {
+   res.write("Bot is Online!");
+   res.end();
+}).listen(process.env.PORT || 3000);
+
